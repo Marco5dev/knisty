@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "connect-livereload": "^0.6.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "livereload": "^0.9.3",
+    "mongoose": "^6.0.5"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon --ext js,ejs --ignore public"
+  },
+  "name": "knisty",
+  "version": "1.0.0",
+  "description": "موقع به قصص جميع الاباء البطاركة",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "Mark Maher Ewida",
+  "license": "ISC"
+}
