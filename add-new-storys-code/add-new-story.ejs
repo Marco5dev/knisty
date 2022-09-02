@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <!-- head -->
+<%- include("./partials/head") %>
+<body id="body">
+  <!-- header -->
+  <%- include("./partials/header") %>
+  
+  <!-- first section -->
+    <section>
+      <div class="section-title">
+        <h1 dir="ltr">
+          Add New Story
+        </h1>
+      </div>
+
+
+      <form method="POST" action="/add-new-story" dir="ltr" class="add-story-form">
+        <label for="title" class="label">Story title: </label>
+        <input required name="title" id="title" type="text" placeholder="Title" class="input">
+
+        <label for="storynum" class="label">Story Number:</label>
+        <input required name="storynum" id="storynum" type="storynum" placeholder="Number" class="input">
+
+        <label for="topyc" class="label">Story topic: </label>
+        <input required name="topyc" id="topyc" type="topyc" placeholder="Topic" class="input">
+
+        <label for="story" class="label">Story:</label>
+        <textarea required name="story" id="story" dir="rtl" placeholder="The Full Story" class="textarea"></textarea>
+
+        <button class="create">create</button>
+      </form>
+    </section>
+  
+  <!-- footer -->
+  <%- include("./partials/footer") %>
+</body>
+</html>
