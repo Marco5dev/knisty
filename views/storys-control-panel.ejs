@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<%- include("./partials/head") %>
+
+<body dir="rtl">
+  <!-- header -->
+  <%- include("./partials/header") %>
+
+<!-- the first section -->
+<section>
+<div class="info">
+  <p><strong>معلومة!</strong> كل القصص الموجودة بالموقع مأخوذة من <a href="https://st-takla.org/Saints/Coptic-Synaxarium-Orthodox-Saints-Biography-00-Coptic-Orthodox-Popes/Coptic-Popes-History_000-index_.html">هنا</a> </p>
+</div>
+</section>
+
+<!-- the second section -->
+  <section dir="rtl">
+    <div class="story-card-content">
+      <% arrStory.forEach(storyItem => {
+        %>
+        <div class="story-card">
+          <div class="photo">
+            <img src="" alt="">
+          </div>
+          <div class="storycardnum">
+            <h3>
+              <%- storyItem.storynum %>
+            </h3>
+          </div>
+          <div class="card-title">
+            <h4>
+              <%- storyItem.title %>
+            </h4>
+          </div>
+          <div class="card-topyc">
+            <p>
+              <%- storyItem.topyc %>
+            </p>
+          </div>
+          <div>
+            <a class="card-btn" href="/storys/<%= storyItem._id %>">القصة</a>
+          </div>
+        </div>
+        <%
+      }); %>
+    </div>
+  </section>
+
+
+  <!-- footer -->
+  <%- include("./partials/footer") %>
+</body>
+</html>

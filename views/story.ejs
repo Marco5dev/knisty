@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <!-- head -->
+<%- include("./partials/head") %>
+
+<body>
+  <!-- header -->
+  <%- include("./partials/header") %>
+
+  <!-- story section -->
+  <section class="story-section">
+    <div class="story-pic">
+      <%- arrStory.pic %>
+    </div>
+    <div class="section-content-title">
+      <h4 dir="rtl">
+        <%- arrStory.title %>
+      </h4>
+    </div>
+    <div class="section-content-topic">
+      <p>
+        <%- arrStory.story %>
+      </p>
+    </div>
+  </section>
+
+<!-- footer -->
+  <%- include("./partials/footer") %>
+</body>
+</html>
