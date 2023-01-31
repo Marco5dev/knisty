@@ -33,7 +33,7 @@ liveReloadServer.server.once("connection", () => {
 
 // mongoose sittings
 const dbname = "church";
-const db = `mongodb+srv://mark:marco@marcodb.awz9vmu.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+const db = `url/${dbname}?retryWrites=true&w=majority`;
 mongoose
   .connect(db)
   .then(result => {
