@@ -4,7 +4,9 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "livereload": "^0.9.3",
-    "mongoose": "^6.0.5"
+    "mongoose": "^6.0.5",
+    "nodemon": "^2.0.20",
+    "sitemap": "^7.1.1"
   },
   "scripts": {
     "start": "node app.js",
@@ -14,7 +16,6 @@
   "version": "1.0.0",
   "description": "موقع به قصص جميع الاباء البطاركة",
   "main": "app.js",
-  "devDependencies": {},
   "author": "Mark Maher Ewida",
   "license": "ISC"
 }

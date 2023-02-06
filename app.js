@@ -98,6 +98,78 @@ app.get("/storys/:id", (req, res) => {
     });
 });
 
+// add new story controlers
+app.get("/add-new-story", (req, res) => {
+    res.render("add-new-story", {
+      mytitle: "create new story"
+    });
+  });
+  app.post("/add-new-story", (req, res) => {
+    const storys = new Storys(req.body);
+  
+    storys
+      .save()
+      .then(result => {
+        res.redirect("/storys");
+        console.log(`New story had been sent to ${dbname} Database`);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+
+// Sitemap
+app.get('/sitemap.xml', (req, res) => {
+  res.set('Content-Type', 'application/xml');
+  res.send(`
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://knisty.repl.co/</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/add-new-story</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/about-me</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/630212a06593a02b0903e8df</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056d01dbc79384f0746e88</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056dc333eb1f5970561d6c</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056e2333eb1f5970561d70</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056e6b33eb1f5970561d73</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056eaa33eb1f5970561d76</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056efb33eb1f5970561d79</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056f6133eb1f5970561d7c</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056fa733eb1f5970561d7f</loc>
+  </url>
+  <url>
+    <loc>https://knisty.repl.co/storys/63056fed33eb1f5970561d82</loc>
+  </url>
+</urlset>
+  `);
+});
+
 //  404 page
 app.use((req, res) => {
   res.status(404).render("404", {
